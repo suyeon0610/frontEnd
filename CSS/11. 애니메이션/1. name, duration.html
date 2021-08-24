@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+
+        .box:hover {
+            /* animation-name: grow-up;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-direction: alternate; */
+
+            animation: grow-up 1s linear 1s infinite alternate;
+        }
+
+        @keyframes grow-up {
+            0% {
+                width: 100px;
+            }
+            50% {
+                width: 500px;
+            }
+            100% {
+                width: 300px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+    
+</body>
+</html>

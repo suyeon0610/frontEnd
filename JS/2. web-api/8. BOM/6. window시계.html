@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bgImg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; /*z방향 가장 아래로*/
+            animation: fadeIn .5s linear; /*아래 키프레스 fadeIn호출*/
+        }
+
+
+        .clock h2 {color: white;}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- 배경을 넣을 이미지 -->
+    <!-- <img class="bgImg"> -->
+
+    <div class="clock">
+        <h2>00:00:00</h2>
+    </div>
+
+    <script>
+        function createTime() {
+            const $clock = document.querySelector('.clock h2');
+            const date = new Date();
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+            const second = date.getSeconds();
+            const time = (hour < 10 ? '0' + hour : hour) + ':' + 
+                         (minute < 10 ? '0' + minute : minute) + ':' +
+                         (second < 10 ? '0' + second : second);
+            $clock.textContent = time;
+        }
+
+        let count = 0;
+        function changeBackGround() {
+            const bgList = [1, 2, 3, 4];
+            // const $bgImg = document.querySelector('.bgImg');
+            // $bgImg.src = `../6. QUIZ/img/${bgList[count]}.jpg`;
+            const $img = document.createElement('img');
+            $img.src = `../6. QUIZ/img/${bgList[count]}.jpg`;
+            $img.classList.add('bgImg');
+            // document.body.remove($bgImg);
+            document.body.appendChild($img);
+            count++;
+            
+            if(count == bgList.length) {
+                count = 0;
+            }
+        }
+
+        (function() {
+            createTime();
+            setInterval(createTime, 1000);
+            changeBackGround();
+            setInterval(changeBackGround, 10000);
+        })();
+
+    </script>
+
+</body>
+</html>

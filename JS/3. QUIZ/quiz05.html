@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title:hover {
+            text-decoration: underline green;
+        }
+
+        .box {
+            padding: 5px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid orange;
+            display: none;
+        }
+
+        .box>li {
+            list-style: none;
+        }
+
+        .open .box {
+            display: block;
+        }
+
+        .menu .title::before {
+            content: '▶';
+            color: green;
+        }
+
+        .open .title::before {
+            content: '▼';
+            color: green;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="lunches" class="menu">
+        <span class="title">추천 점심 메뉴 (click me!)</span>
+        <ul class="box">
+            <li>짜장면</li>
+            <li>돈가스</li>
+            <li>김치찌개</li>
+            <li>제육덮밥</li>
+        </ul>
+    </div>
+
+    <script>
+        const $lunches = document.getElementById('lunches');
+        const $title = document.querySelector('.title');
+
+
+        $title.onclick = function() {
+            // if($lunches.classList.contains('menu')){
+            //     $lunches.classList.replace('menu', 'menuList');
+            // } else {
+            //     $lunches.classList.replace('menuList', 'menu');
+                
+            // }
+            $lunches.classList.toggle('open');
+            console.log($lunches.classList);
+        }
+    </script>
+</body>
+</html>

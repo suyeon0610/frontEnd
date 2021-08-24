@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[disabled] {
+            opacity: 0.2;
+        }
+        input[type=password] {
+            color: red;
+            width: 100px;
+        }
+        /* class^=x: class의 이름이 x로 시작한다면 */
+        button[class^="btn-"] {
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        /* class$=x: class의 이름이 x로 끝난다면 */
+        button[class$=success] {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="hello">
+    <input type="password" value="1234">
+    <input type="text" value="disable text" disabled>
+    <button class="btn-success">Success</button>
+    <button class="btn-danger">Danger</button>
+</body>
+</html>

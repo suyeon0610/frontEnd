@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1. 중복 선언 허용
+        var x = 1;
+        var x = 100;
+        console.log(x);
+
+        //2. 블록레벨 스코프를 지원하지 않음. (함수만 블록으로 인정)
+        var i = 1;
+
+        for(var i=0; i<10; i++) {
+
+        }
+        console.log('i: ' + i);
+
+        //3. 변수 호이스팅
+        y = 100;
+        console.log('y: ' + y);
+        var y;
+
+    </script>
+</body>
+</html>

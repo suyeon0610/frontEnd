@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <style>
+        .my-grid {
+            margin: 0 auto;
+            float: none;
+        }
+        /* 부트스트랩의 모든 col속성은 float가 내장되어 있음 */
+        /* 지정한 클래스 속성에 float를 주지 않으면 가운데 정렬이 동작함 */
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-grid">
+                <div class="form-group">
+                    <label for="user">이름</label>
+                    <input type="text" class="form-control" id="user">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">비밀번호</label>
+                    <input type="password" class="form-control" id="pw">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

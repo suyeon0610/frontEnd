@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <style>
+        header {
+            height: 100px;
+            background: skyblue;
+            border-radius: 15px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        ul {
+            background: #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            list-style: none;
+        }
+
+        #banner {
+            background: #ccc;
+            height: 200px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 클래스 이름이 container 안에서 작성하는 것을 권장. -->
+    <div class="container">
+        <header>
+            <h2>그리드 시스템을 이용한 레이아웃</h2>
+        </header>
+        <div class="row">
+            <div id="menu" class="col-md-2">
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>
+            </div> <!-- menu -->
+            <div id="content" class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at dui sed justo volutpat
+                            consectetur id quis arcu. Phasellus iaculis lacus sit amet ligula ullamcorper accumsan. Duis
+                            consequat sed orci finibus porttitor. Interdum et malesuada fames ac ante ipsum primis in
+                            faucibus. Nam id neque vel sem vulputate volutpat vel quis arcu. Integer facilisis varius
+                            est a mattis. Phasellus in malesuada nisl. Phasellus sed nulla in sem laoreet ultricies in
+                            eu quam. Sed vehicula metus quis dolor porttitor, eu congue purus vulputate.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            Quisque eget velit sit amet nisi gravida pharetra eget auctor tellus. Proin quam lectus,
+                            pretium vel mattis at, convallis gravida dui. Sed pulvinar neque sed magna vestibulum
+                            feugiat sed eget nisl. Proin dui eros, imperdiet in sem nec, maximus lobortis purus. Aliquam
+                            erat volutpat. Cras facilisis dui ornare viverra elementum. Suspendisse molestie, elit sed
+                            commodo bibendum, justo neque dictum nisl, id semper tortor nibh non felis. Vestibulum ante
+                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus sit amet
+                            justo odio. Sed maximus, augue sed congue pulvinar, nulla tortor tincidunt massa, at commodo
+                            leo turpis sed ipsum. Cras tincidunt mi massa, quis faucibus odio sodales sed. Mauris vel
+                            imperdiet erat, vitae aliquam arcu. Vivamus a bibendum dui, vel iaculis lorem. Aliquam
+                            placerat vulputate erat, sagittis ullamcorper lectus bibendum nec. Pellentesque aliquet
+                            tincidunt mauris, quis luctus urna porttitor a.
+                        </p>
+                    </div>
+                </div>
+                <div id="banner" class="col-md-2">
+                    여기는 기타 부가적이 배너
+                </div>
+            </div>
+        </div> <!-- row -->
+        <hr>
+        <footer>
+            여기는 하단 푸터 부분
+        </footer>
+    </div> <!-- container -->
+</body>
+
+</html>

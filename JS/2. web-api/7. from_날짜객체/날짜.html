@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const millis = 1573735023000;
+        let date = new Date(); //오늘 날짜
+        console.log(date.getTime()); //날짜를 밀리초로 구함
+        const today = new Date(millis);
+        console.log(today.getTime());
+
+        console.log(today);
+        console.log(date.getFullYear());
+        console.log(date.getMonth()+1);
+
+        let gap = date.getTime() - millis;
+
+        if(gap < 60 * 60* 24 * 1000) {
+            if(gap < 60 * 60 * 1000){
+                
+            }
+        }
+    </script>
+</body>
+</html>

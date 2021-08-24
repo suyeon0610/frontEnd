@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+    - Quiz. 아래 요구사항에 맞는 코드를 작성하고 
+            콘솔에서 실행하여 테스트하세요.
+    - 요구사항
+    1. 프로그램 실행 시 2~9단 중 무작위로 구구단이 등장하게 하세요.
+    2. for문으로 구현하세요.
+
+    - 출력 예시
+    ====================
+    랜덤 구구단 4단
+    ====================
+    4 x 1 = 4
+    4 x 2 = 8
+    4 x 3 = 12
+    4 x 4 = 16
+    4 x 5 = 20
+    4 x 6 = 24
+    4 x 7 = 28
+    4 x 8 = 32
+    4 x 9 = 36
+*/
+
+    var dan = Math.floor((Math.random() * 8) + 2);
+    console.log("구구단 단수: " + dan + "단");
+
+    for(var hang=1; hang<=9; hang++) {
+        console.log(`${dan} x ${hang} = ${dan*hang}`);
+    }
+
+
+    </script>
+</body>
+
+</html>

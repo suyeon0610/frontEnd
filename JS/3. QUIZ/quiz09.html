@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .content {
+            border: 1px solid #777;
+        }
+
+        .content,
+        .content .left,
+        .content .right {
+            width: 50%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .content .right,
+        .content .left {
+            float: left;
+        }
+
+        .left .inner,
+        .right .inner {
+            border: 1px solid #777;
+            height: 300px;
+        }
+
+        .left .inner img {
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: cover;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .dark {
+            background: black;
+        }
+
+        .white {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="center">
+            <h2>토글형태 활용</h2>
+            <button id="btn1">어둡게보기</button>
+            <button id="btn2">이름</button>
+            <button id="btn3">메모장</button>
+            <hr>
+        </div>
+    </header>
+
+    <section>
+        <div class="content clearfix">
+            <div class="left">
+                <div class="inner"><img src="" alt="pic"></div>
+            </div>
+            <div class="right">
+                <div class="inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in nisi aliquet lacus condimentum
+                        consequat non sed quam. Nullam sodales eros eu massa blandit, ut consequat ex tempus. Nullam
+                        pulvinar nunc a sem faucibus porta sed sagittis enim. Ut magna ex, dignissim ut commodo non,
+                        bibendum quis est. Donec vel diam maximus, molestie est a, blandit leo. Nam tristique nunc elit,
+                        in cursus urna vulputate sit amet.
+                    </p>
+                    <a href="">위키백과</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const $btn1 = document.getElementById('btn1');
+        const $body = document.querySelector('body');
+        const $h2 = document.querySelector('.center>h2');
+        console.log($h2);
+        const $right = document.querySelector('.right');
+        $btn1.onclick = function () {
+            $body.classList.toggle('dark');
+            $h2.classList.toggle('white');
+            $right.classList.toggle('white');
+            if($body.classList.contains('dark')) {
+                $btn1.textContent = '밝게보기';
+            } else {
+                $btn1.textContent = '어둡게보기';
+            }
+        }
+    </script>
+</body>
+
+</html>

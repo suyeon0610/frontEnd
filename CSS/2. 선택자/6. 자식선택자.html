@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 앞은 조건, 맨 뒤가 선택자.*/
+        ul > .orange {
+            color: orange;
+        }
+        div > ul > li {
+            font-weight: bold;
+        }
+        div > ul > ol {
+            color: yellowgreen;
+        }
+        div > h1 {
+            color: violet;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>안녕안녕~</h1>
+
+    <div>
+        <h1>메롱메롱~</h1>
+        <ul>
+            <li>사과</li>
+                <ol>
+                    <li>1번째</li>
+                    <li>2번째</li>
+                    <li>3번째</li>
+                </ol>
+            <li class="orange">오렌지</li>
+            <li>딸기</li>
+                <ol>
+                    <li>1번째</li>
+                    <li>2번째</li>
+                    <li>3번째</li>
+                </ol>
+        </ul>
+    </div>
+    <div>당근</div>
+    <p>토마토</p>
+    <span class="orange">오렌지</span>
+
+</body>
+</html>

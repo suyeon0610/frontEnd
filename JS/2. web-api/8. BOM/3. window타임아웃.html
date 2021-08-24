@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>5초 뒤 타임함수가 실행되는데, 이 버튼을 누르면 실행되지 않습니다.</h3>
+    <button class="stopTime">취소!</button>
+
+    <script>
+
+        /*
+        const stop = setTimeout(function() {
+            alert('5초 후 경고창 출력!');
+        }, 5000);
+
+        const $stopTime = document.querySelector('.stopTime');
+        $stopTime.onclick = function() {
+            clearTimeout(stop);
+        }
+        */
+
+        //타임아웃 함수와 매개값을 전달받는 함수.
+        //타임아웃 없이 바로 실행.
+        // setTimeout(test('hello world!'), 3000);
+        // function test(text) {
+        //     alert(text);
+        // }
+
+        // 1st (함수 자체를 리턴합니다.)
+        setTimeout(test("hello world"), 3000);
+        function test(text) {
+            return function() {
+                alert(text);
+            }
+        }
+
+        //2nd (즉시실행함수로 만든다.)
+        // (function(text) {
+        //     let temp = text;
+        //     setTimeout(function(temp) {
+        //         alert(text);
+        //     }, 3000);
+        // })('hello world');
+
+
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

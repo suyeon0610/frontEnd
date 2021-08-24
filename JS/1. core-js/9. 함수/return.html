@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //void 함수: 리턴값이 없는 함수.
+        //void함수는 단독 호출해서 사용. 다른 함수의 인자로
+        //전달이 불가능합니다.
+        function greeting(nickname) {
+            var badNick = ['멍청이', '바보', '쓰레기', '양아치'];
+            if(badNick.includes(nickname)) {
+                console.log('그런 나쁜말은 하지 마세요!');
+                return;
+            }
+            console.log(nickname + '님 안녕하세요~');
+        }
+
+        function add(n1, n2) {
+            return n1 + n2;
+            console.log('dddddd'); //실행 안됨!
+        }
+
+        function sub(n1, n2) {
+            console.log(`${n1} - ${n2} = ${n1-n2}`);
+        }
+
+        function operateAll(n1, n2) {
+            return {
+                plus : n1 + n2,
+                minus : n1 - n2,
+                multi : n1 * n2,
+                divide : n1 / n2
+            }
+        }
+
+
+
+        greeting('멍청이');
+
+        console.log(add(3, 5));
+
+        var res1 = add(add(5, 5), add(add(10, 10), add(50, 5)));
+        console.log(res1);
+
+        var res2 = sub(30, 14);
+        console.log(res2);
+
+        var results = operateAll(10, 2);
+        console.log(results.plus);
+        console.log(results.minus);
+        console.log(results['multi']);
+
+
+
+    </script>
+</body>
+</html>

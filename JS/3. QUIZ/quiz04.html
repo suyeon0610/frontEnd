@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button value="0">텍스트 숨기기!</button>
+
+    <div id="hi">안녕하세요!</div>
+
+    <script>
+        const $hidden = document.querySelector('button');
+        const $hi = document.getElementById('hi');
+
+        $hidden.onclick = function() {
+            if($hidden.value == 0) {
+                $hidden.value = 1;
+                console.log($hidden.value);
+                $hidden.textContent = '텍스트 보이기!';
+                $hi.style.display = 'none';
+            } else{
+                $hidden.value = 0;
+                console.log($hidden.value);
+                $hidden.textContent = '텍스트 숨기기!';
+                $hi.style.display = 'block';
+            }
+        }   
+
+    </script>
+</body>
+</html>

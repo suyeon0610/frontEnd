@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .content {
+            border: 1px solid #777;
+        }
+
+        .content,
+        .content .left,
+        .content .right {
+            width: 50%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .content .right,
+        .content .left {
+            float: left;
+        }
+
+        .left .inner,
+        .right .inner {
+            border: 1px solid #777;
+            height: 300px;
+        }
+
+        .left .inner img {
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: cover;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .dark {
+            background: black;
+        }
+
+        .white {
+            color: white;
+        }
+    </style>
+    <script src="/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <header>
+        <div class="center">
+            <h2>토글형태 활용</h2>
+            <button id="btn1">어둡게보기</button>
+            <button id="btn2">이름 보기</button>
+            <hr>
+        </div>
+    </header>
+
+    <section>
+        <div class="content clearfix">
+            <div class="left">
+                <div class="inner"><img src="" alt="pic"></div>
+            </div>
+            <div class="right">
+                <div class="inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in nisi aliquet lacus condimentum
+                        consequat non sed quam.
+                    </p>
+                    <a href="">위키백과</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        $(document).ready(function() {
+            const $btn1 = $('#btn1');
+            const $btn2 = $('#btn2');
+            const $body = $('body');
+
+            $btn1.toggleClass('dark');
+            $btn1.click(function() {
+                // if($btn.hasClass('dark'))
+                if($btn1.attr('class') === 'dark') {
+                    $body.css('background', 'black');
+                    // $('p, h2, a').css('color', 'white');
+                    $('p, h2, a').each(function(index, item) {
+                        //each는 일반적인 반복 함수임.
+                        //앞의 선택자로 지목한 태그흫 배열 형태로 받아와서
+                        //index와 item으로 나누어서 함수 내에서 사용할 수 있게 함.
+                        item.style.color = 'white';
+                        item.css('color', 'white');
+                    });
+                    $(this).html('밝게 보기');
+                } else {
+                    $body.css('background', 'white');
+                    $('p, h2, a').css('color','black');
+                    $(this).html('어둡게 보기');
+                }
+            });
+
+            $btn2.click(function() {
+                if($btn2.hasClass('name')) {
+                    $('.inner > p').html('홍길자<br>20세<br>능력단위<br>JAVA, CSS');
+                    $('.inner > a').css('display', 'none');
+                    $(this).html('내용보기');
+                    $(this).attr('class', 'cont');;
+                } else {
+                    const str = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in nisi aliquet lacus condimentum consequat non sed quam.';
+                    $('.inner > p').html(str);
+                    $('.inner > a').css('display', 'block');
+                    $(this).html('이름보기');
+                    $(this).attr('cladd', 'name');
+                }
+            });
+
+        }); //end jQuery
+
+
+    </script>
+</body>
+</html>

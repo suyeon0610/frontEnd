@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            width: 200px;
+            border: 3px solid black;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>css스타일 변경하기</h2>
+    <img src="./img/1.jpg" alt="" class="img">
+    <select id="season">
+        <option>봄</option>
+        <option>여름</option>
+        <option>가을</option>
+        <option>겨울</option>
+    </select>
+    <span>변경할 색상</span>
+    <input type="color" class="input">
+
+    <script>
+        const $season = document.getElementById('season');
+        const $img = document.querySelector('.img');
+        const $color = document.querySelector('.input');
+
+        $season.onchange = function() {
+            console.log($season.options.selectedIndex+1);
+            let index = $season.options.selectedIndex;
+            console.log($img.src=`./img/${index+1}.jpg`);
+        }
+
+
+        $color.onchange = function() {
+            console.log($color.value);
+            console.log($img.style.borderColor);
+            $img.style.borderColor = $color.value;
+        }
+        
+    </script>
+</body>
+</html>

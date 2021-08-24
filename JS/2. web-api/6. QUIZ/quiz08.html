@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>할일 목록 만들기</h2>
+
+    <div class="nameForm">
+        <h3 class="nameTitle"></h3>
+        <input type="text" placeholder="이름을 입력하세요" class="nameInput">
+        <button class="btn1">확인</button>
+    </div>
+
+    <div class="todoForm">
+        <input type="text" placeholder="당신의 할일을 적으세요" class="todoInput">
+        <button class="btn2">확인</button>
+    </div>
+
+    <ul class="todoList">
+
+    </ul>
+
+    <script>
+
+        const $nameForm = document.querySelector('.nameForm');
+        const $btn1 = document.querySelector('.btn1');
+        const $nameInput = document.querySelector('.nameInput');
+        const $nameTitle = document.querySelector('.nameTitle');
+
+        $btn1.addEventListener('click', function() {
+            $nameTitle.textContent = $nameInput.value + '님 안녕하세요!';
+            $nameInput.style.display = 'none';
+            $btn1.style.display = 'none';
+        });
+
+        const $todoInput = document.querySelector('.todoInput');
+        const $btn2 = document.querySelector('.btn2');
+
+        function handleTodo() {
+            createTodo($todoInput.value); //할일추가 메서드 호출
+            $todoInput.value = ''; //할일 초기화
+        }
+
+        function createTodo(text) {
+            //li 생성
+            const $li = document.createElement('li');
+            $li.textContent = text;
+            
+            //버튼 생성
+            const $delBtn = document.createElement('button');
+            $delBtn.textContent = 'X';
+
+            //삭제 버튼 클릭시 이벤트 발생
+            $delBtn.addEventListener('click', () => {
+                document.querySelector('.todoList').removeChild($delBtn.parentNode);
+            });
+
+            //li에 버튼을 넣자
+            $li.appendChild($delBtn);
+
+            //li를 ul에 추가하자
+            document.querySelector('.todoList').appendChild($li);
+        }
+
+        
+
+
+        $btn2.addEventListener('click', handleTodo);
+
+
+    </script>
+    
+</body>
+</html>

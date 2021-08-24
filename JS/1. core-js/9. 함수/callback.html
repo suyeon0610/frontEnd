@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        function showNumbers(n) {
+            for(var i=1; i<=n; i++) {
+                console.log(i);
+            }
+        }
+
+        function showEvenNumber(n) {
+            for(var i=1; i<=n; i++) {
+                if(i % 2 === 0) {
+                    console.log(i);
+                }
+            }
+        }
+
+        function showOddNumber(n) {
+            for(var i=1; i<=n; i++) {
+                if(i % 2 === 1) {
+                    console.log(i);
+                }
+            }
+        }
+        */
+
+        //콜백 함수
+        function showNumbers(n, func) {
+            for(var i=1; i<=n; i++) {
+                func(i);
+            }
+        }
+
+        showNumbers(10, function(i) {
+            if(i % 2 === 0) {
+                console.log(i);
+            }
+        });
+
+
+        var plusMinus = function(a, b, callback) {
+            callback(a + b, a - b);
+        }
+
+        plusMinus(10, 20, function(res1, res2) {
+            console.log(res1);
+            console.log(res2);
+        });
+
+
+
+
+
+        // showNumbers(10);
+        // showEvenNumber(10);
+        // showOddNumber(10);
+
+
+
+    </script>
+</body>
+</html>

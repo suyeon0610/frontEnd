@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    
+    <ul id="test">
+        <li id="tag">태그1</li>
+        <li id="tag">태그2</li>
+        <li id="tag">태그3</li>
+    </ul>
+
+    <script>
+
+        //li태그에 모두 동일한 이벤트 등록
+        //부모태그에 이벤트 등록하고 onclick시 전달되는
+        //이벤트 객체를 이용해서 등록하는 방식.
+        /*
+        const $test = document.getElementById('test');
+        // $test.onclick = function(e) {
+        //     console.log(e.target.innerHTML);
+        // }
+
+            $test.addEventListener('click', function(e) {
+                console.log(e.target.innerHTML);
+            });
+        */
+
+        //on(이벤트, 위임할 요소, 기능)
+        $('#test').on('click', 'li', function() {
+            //$(this)는 이벤트가 발생한 주체(태그, 요소)를 의미
+            console.log($(this).html());
+        });
+    </script>
+
+    <div id="box">
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            //on함수는 실행 순서에 영향을 받지 않고
+            //이벤트가 발생하는 순간 on함수에 지정된 이벤트 발생 시킴
+            //이는 실행 순서와 상관없는 비동기 통신을 할 때 유용함.
+            $('#box').on('click', 'a', function(e) {
+                e.preventDefault();
+                alert('실행되나요?');
+            });
+
+            let str = '';
+            str += '<a href="#">태그1</a> <br>';
+            str += '<a href="#">태그2</a> <br>';
+            str += '<a href="#">태그3</a> <br>';
+            $('#box').html(str);
+        });
+    </script>
+
+</body>
+</html>
